@@ -18,9 +18,7 @@ const CartScreen = ({ match, location, history }) => {
   const { cartItems } = cart
 
   useEffect(() => {
-    if (productId) {
-      dispatch(addToCart(productId, qty))
-    }
+    if (productId) dispatch(addToCart(productId, qty))
   }, [dispatch, productId, qty])
 
   // Remove Item from cart method/fuction

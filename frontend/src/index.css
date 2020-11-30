@@ -79,3 +79,13 @@ h2 {
     margin-top: 20px;
   }
 }
+
+@media (max-width: 600px) {
+  .orderscreen__title {
+    font-size: 15px;
+  }
+  .orderscreen__productName {
+    margin-top: 5px;
+    font-size: large;
+  }
+}

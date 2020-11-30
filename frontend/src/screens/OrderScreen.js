@@ -102,9 +102,9 @@ const OrderScreen = ({ match, history }) => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <>
-      <h1>Order: {order._id}</h1>
-      <Row>
-        <Col md={8}>
+      <h1 className='orderscreen__title'>Order: {order._id}</h1>
+      <Row className='orderscreen'>
+        <Col md={8} className='orderscreen__shipping'>
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>Shipping</h2>
@@ -156,12 +156,12 @@ const OrderScreen = ({ match, history }) => {
                             rounded
                           />
                         </Col>
-                        <Col>
+                        <Col className='orderscreen__productName'>
                           <Link to={`/product/${item.product}`}>
                             {item.name}
                           </Link>
                         </Col>
-                        <Col md={4}>
+                        <Col md={4} className='orderscreen__productName'>
                           {item.qty} x ${item.price} = $
                           {(item.qty * item.price).toFixed(2)}
                         </Col>
@@ -173,7 +173,7 @@ const OrderScreen = ({ match, history }) => {
             </ListGroup.Item>
           </ListGroup>
         </Col>
-        <Col md={4}>
+        <Col md={4} className='orderscreen__summary'>
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>

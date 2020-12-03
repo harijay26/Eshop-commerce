@@ -6,7 +6,7 @@ eCommerce platform built with the MERN stack & Redux.
 
 ## Demo Website
 
-- Heroku: https://electronshopapp.herokuapp.com/
+- Click to view [E-Shop eCommerce](https://electronshopapp.herokuapp.com/)
 
 ## Features
 

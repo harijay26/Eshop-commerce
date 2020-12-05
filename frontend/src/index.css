@@ -6,16 +6,6 @@ main {
   min-height: 80vh;
 }
 
-/* @media only screen and (min-width: 300px) {
-  .nav,
-  .nav__navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    width: 100%;
-  }
-} */
-
 .nav,
 .nav__navbar {
   position: sticky;

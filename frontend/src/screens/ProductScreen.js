@@ -35,7 +35,7 @@ const ProductScreen = ({ history, match }) => {
     error: errorProductReview,
   } = productReviewCreate
 
-  //   Loads the once the Component is initiated
+  //   Loads once the Component is initiated
   useEffect(() => {
     if (successProductReview) {
       alert('Review Submitted!')

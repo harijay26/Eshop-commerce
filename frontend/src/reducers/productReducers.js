@@ -71,7 +71,6 @@ export const productDeleteReducer = (state = {}, action) => {
       return state
   }
 }
-
 export const productCreateReducer = (state = {}, action) => {
   switch (action.type) {
     case PRODUCT_CREATE_REQUEST:

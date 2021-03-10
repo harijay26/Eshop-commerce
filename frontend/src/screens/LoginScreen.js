@@ -11,14 +11,17 @@ const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  // Calls/Invoke an action
   const dispatch = useDispatch()
 
+  // Brings in Data from the global state (Redux Store)
   const userLogin = useSelector(state => state.userLogin)
   const { loading, error, userInfo } = userLogin
 
   // Check for Redirect
   const redirect = location.search ? location.search.split('=')[1] : '/'
 
+  // Cause a side-effect when the component loads
   useEffect(() => {
     if (userInfo) {
       history.push(redirect)

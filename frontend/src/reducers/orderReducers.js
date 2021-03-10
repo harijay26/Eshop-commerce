@@ -22,6 +22,7 @@ import {
   ORDER_DELIVER_RESET,
 } from '../constants/orderConstants'
 
+// Create User Order
 export const orderCreateReducer = (state = {}, action) => {
   switch (action.type) {
     case ORDER_CREATE_REQUEST:
@@ -44,6 +45,7 @@ export const orderCreateReducer = (state = {}, action) => {
   }
 }
 
+// Get created Order Details
 export const orderDetailsReducer = (
   state = { loading: true, orderItems: [], shippingAddress: {} },
   action
@@ -115,6 +117,7 @@ export const orderDeliverReducer = (state = {}, action) => {
   }
 }
 
+// List all User Orders to the logged-In user
 export const orderListMyReducer = (state = { orders: [] }, action) => {
   switch (action.type) {
     case ORDER_LIST_MY_REQUEST:

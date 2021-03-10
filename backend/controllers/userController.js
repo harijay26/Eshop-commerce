@@ -104,7 +104,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   }
 })
 
-// @desc     Get user users
+// @desc     Get all Users
 // @route    GET /api/users
 // @access   Private/Admin
 const getUsers = asyncHandler(async (req, res) => {
@@ -163,7 +163,7 @@ const updateUser = asyncHandler(async (req, res) => {
     })
   } else {
     res.status(404)
-    throw new Error('User not found')
+    throw new Error('User not found/updated')
   }
 })
 

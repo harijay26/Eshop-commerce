@@ -9,7 +9,7 @@ import { listMyOrders } from '../actions/orderActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userContants'
 import Meta from '../components/Meta'
 
-const ProfileScreen = ({ location, history }) => {
+const ProfileScreen = ({ history }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -35,7 +35,7 @@ const ProfileScreen = ({ location, history }) => {
   const orderListMy = useSelector(state => state.orderListMy)
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy
 
-  //   Fires the actions once the components loads
+  // Fires the actions once the components loads
   useEffect(() => {
     if (!userInfo) {
       history.push('/login')

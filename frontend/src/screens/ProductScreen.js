@@ -17,7 +17,7 @@ const ProductScreen = ({ history, match }) => {
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState('')
 
-  // useDispatch - calls an action
+  // useDispatch - calls/invokes an action
   const dispatch = useDispatch()
 
   // useSelector - Brings in Data from the Product-Details State

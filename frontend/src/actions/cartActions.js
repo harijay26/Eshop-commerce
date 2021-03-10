@@ -32,7 +32,7 @@ export const removeFromCart = id => (dispatch, getState) => {
     type: CART_REMOVE_ITEM,
     payload: id,
   })
-
+  // Set Cart Items to localStorage
   localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
 }
 
@@ -43,6 +43,7 @@ export const saveShippingAddress = data => dispatch => {
     payload: data,
   })
 
+  // Set Shipping Items to localStorage
   localStorage.setItem('shippingAddress', JSON.stringify(data))
 }
 
@@ -53,5 +54,6 @@ export const savePaymentMethod = data => dispatch => {
     payload: data,
   })
 
+  // Set PaymentMethod Items to localStorage
   localStorage.setItem('paymentMethod', JSON.stringify(data))
 }

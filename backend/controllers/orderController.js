@@ -49,11 +49,12 @@ const getOrderById = asyncHandler(async (req, res) => {
     res.json(order)
   } else {
     res.status(404)
+    throw new Error('Order not found')
   }
 })
 
 // @desc     Update order to paid
-// @route    GET /api/orders/:id/pay
+// @route    Put /api/orders/:id/pay
 // @access   Private
 const updateOrderToPaid = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id)

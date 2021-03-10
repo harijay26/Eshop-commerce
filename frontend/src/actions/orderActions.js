@@ -93,7 +93,7 @@ export const getOrderDetails = id => async (dispatch, getState) => {
   }
 }
 
-// User initiate payment for Order
+// User initiate payment for Order & Update order to paid
 export const payOrder = (orderId, paymentResult) => async (
   dispatch,
   getState
@@ -177,7 +177,7 @@ export const deliverOrder = order => async (dispatch, getState) => {
   }
 }
 
-// List all User Orders to specific the User
+// List all User Orders to the logged-In user
 export const listMyOrders = () => async (dispatch, getState) => {
   try {
     dispatch({

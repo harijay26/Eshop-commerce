@@ -15,8 +15,10 @@ const HomeScreen = ({ match }) => {
 
   const pageNumber = match.params.pageNumber || 1
 
+  // useDispatch - calls/invokes an action
   const dispatch = useDispatch()
 
+  // useSelector - Brings in Data from the Product-Details State
   const productList = useSelector(state => state.productList)
   const { loading, error, products, page, pages } = productList
 

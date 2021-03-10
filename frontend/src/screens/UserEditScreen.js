@@ -15,8 +15,10 @@ const UserEditScreen = ({ match, location, history }) => {
   const [email, setEmail] = useState('')
   const [isAdmin, setIsAdmin] = useState(false)
 
+  // Calls/Invoke an action
   const dispatch = useDispatch()
 
+  // Brings in Date from global state (Redux Store)
   const userDetails = useSelector(state => state.userDetails)
   const { loading, error, user } = userDetails
 

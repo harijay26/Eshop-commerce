@@ -34,15 +34,15 @@ const OrderScreen = ({ match, history }) => {
   const orderDetails = useSelector(state => state.orderDetails)
   const { order, loading, error } = orderDetails
 
-  // useSelector - pulls out data from the Global state: OrderPay state(in the store.js)
+  // pulls out data from the Global state: OrderPay state(in the store.js)
   const orderPay = useSelector(state => state.orderPay)
   const { loading: loadingPay, success: successPay } = orderPay
 
-  // useSelector - pulls out data from the Global state: OrderDeliver state(in the store.js)
+  // pulls out data from the Global state: OrderDeliver state(in the store.js)
   const orderDeliver = useSelector(state => state.orderDeliver)
   const { loading: loadingDeliver, success: successDeliver } = orderDeliver
 
-  if (!loading) {
+  if (!loading && !error) {
     // Function that add two decimal to a value
     const addDecimals = num => {
       return (Math.round(num * 100) / 100).toFixed(2)

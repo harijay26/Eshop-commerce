@@ -13,18 +13,23 @@ const CartScreen = ({ match, location, history }) => {
   // Checks for the quantity selected in the URL
   const qty = location.search ? Number(location.search.split('=')[1]) : 1
 
+  // call/invokes an action
   const dispatch = useDispatch()
 
+  // Brings in Data from the global state (Redux Store)
   const cart = useSelector(state => state.cart)
   const { cartItems } = cart
 
   useEffect(() => {
-    if (productId) dispatch(addToCart(productId, qty))
+    if (productId) {
+      dispatch(addToCart(productId, qty))
+    }
   }, [dispatch, productId, qty])
 
   // Remove Item from cart method/fuction
   const removeFromCartHandler = id => {
     dispatch(removeFromCart(id))
+    history.push('/cart')
   }
 
   // Checkout method/function

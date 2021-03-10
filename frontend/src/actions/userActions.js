@@ -109,7 +109,7 @@ export const register = (name, email, password) => async dispatch => {
       payload: data,
     })
 
-    // Set User Info (logged-In user) to localStorage
+    // Set User Info (Registered user) to localStorage
     localStorage.setItem('userInfo', JSON.stringify(data))
   } catch (error) {
     dispatch({
@@ -122,7 +122,7 @@ export const register = (name, email, password) => async dispatch => {
   }
 }
 
-// Get User Details
+// Get authenticated User Details
 export const getUserDetails = id => async (dispatch, getState) => {
   try {
     dispatch({
@@ -159,7 +159,7 @@ export const getUserDetails = id => async (dispatch, getState) => {
   }
 }
 
-// Update User Profile
+// Update authenticated User Profile
 export const updateUserProfile = user => async (dispatch, getState) => {
   try {
     dispatch({
@@ -191,6 +191,7 @@ export const updateUserProfile = user => async (dispatch, getState) => {
       payload: data,
     })
 
+    // Set User Info (logged-In user) to localStorage
     localStorage.setItem('userInfo', JSON.stringify(data))
   } catch (error) {
     dispatch({
@@ -204,7 +205,7 @@ export const updateUserProfile = user => async (dispatch, getState) => {
 }
 
 // Lists Users in Admin dashbord
-export const listUsers = user => async (dispatch, getState) => {
+export const listUsers = () => async (dispatch, getState) => {
   try {
     dispatch({
       type: USER_LIST_REQUEST,

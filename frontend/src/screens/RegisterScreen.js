@@ -14,8 +14,10 @@ const RegisterScreen = ({ location, history }) => {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [message, setMessage] = useState(null)
 
+  // Calls/Invoke an action
   const dispatch = useDispatch()
 
+  // Brings in Data from the global state (Redux Store)
   const userRegister = useSelector(state => state.userRegister)
   const { loading, error, userInfo } = userRegister
 

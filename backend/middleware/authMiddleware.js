@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken'
 import asyncHandler from 'express-async-handler'
 import User from '../models/userModel.js'
 
+// Protected middleware for authenticated users
 const protect = asyncHandler(async (req, res, next) => {
   let token
 
@@ -30,6 +31,7 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 })
 
+// Admin middleware
 const admin = (req, res, next) => {
   if (req.user && req.user.isAdmin) {
     next()

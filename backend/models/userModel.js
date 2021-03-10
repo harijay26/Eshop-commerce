@@ -32,10 +32,11 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
 }
 
 userSchema.pre('save', async function (next) {
+  // Checks if password was modified else do not update
   if (!this.isModified('password')) {
     next()
   }
-
+  // Encrypt/Hash user password
   const salt = await bcrypt.genSalt(10)
   this.password = await bcrypt.hash(this.password, salt)
 })

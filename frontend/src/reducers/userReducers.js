@@ -27,6 +27,7 @@ import {
   USER_UPDATE_RESET,
 } from '../constants/userContants'
 
+// Login to authenticate User
 export const userLoginReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_LOGIN_REQUEST:
@@ -42,6 +43,7 @@ export const userLoginReducer = (state = {}, action) => {
   }
 }
 
+// Register User to authenticate
 export const userRegisterReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_REGISTER_REQUEST:
@@ -50,12 +52,12 @@ export const userRegisterReducer = (state = {}, action) => {
       return { loading: false, userInfo: action.payload }
     case USER_REGISTER_FAIL:
       return { loading: false, error: action.payload }
-
     default:
       return state
   }
 }
 
+// Get authenticated User details
 export const userDetailsReducer = (state = { user: {} }, action) => {
   switch (action.type) {
     case USER_DETAILS_REQUEST:
@@ -71,6 +73,7 @@ export const userDetailsReducer = (state = { user: {} }, action) => {
   }
 }
 
+// Update authenticated User profile
 export const userUpdateProfileReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_UPDATE_PROFILE_REQUEST:
@@ -86,6 +89,7 @@ export const userUpdateProfileReducer = (state = {}, action) => {
   }
 }
 
+// List all Users in Admin dashboard
 export const userListReducer = (state = { users: [] }, action) => {
   switch (action.type) {
     case USER_LIST_REQUEST:
@@ -101,6 +105,7 @@ export const userListReducer = (state = { users: [] }, action) => {
   }
 }
 
+// Delete User by Admin
 export const userDeleteReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_DELETE_REQUEST:
@@ -114,6 +119,7 @@ export const userDeleteReducer = (state = {}, action) => {
   }
 }
 
+// Update User by Admin
 export const userUpdateReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_UPDATE_REQUEST:
@@ -123,9 +129,7 @@ export const userUpdateReducer = (state = {}, action) => {
     case USER_UPDATE_FAIL:
       return { loading: false, error: action.payload }
     case USER_UPDATE_RESET:
-      return {
-        user: {},
-      }
+      return {}
     default:
       return state
   }
